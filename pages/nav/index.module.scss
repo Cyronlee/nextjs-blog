@@ -1,0 +1,29 @@
+.container {
+
+  .menu {
+    height: 20px;
+    width: 100%;
+    background-color: antiquewhite;
+
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    .title{
+      font-size: 14px;
+      padding: 2px;
+    }
+
+    .activeTitle {
+      color: #BD4257;
+    }
+  }
+
+  .underline {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #BD4257;
+  }
+}

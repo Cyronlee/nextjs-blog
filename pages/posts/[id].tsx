@@ -1,8 +1,8 @@
-import Layout from '../../components/layout/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
-import Date from '../../components/date/date'
-import utilStyles from '../../styles/utils.module.css'
+import Layout from "../../components/layout/layout";
+import { getAllPostIds, getPostData } from "../../lib/posts";
+import Head from "next/head";
+import Date from "../../components/date/date";
+import utilStyles from "../../styles/utils.module.css";
 
 export default function Post({ postData }) {
   return (
@@ -18,22 +18,22 @@ export default function Post({ postData }) {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
-  )
+  );
 }
 
 export const getStaticPaths = async () => {
-  const paths = getAllPostIds()
+  const paths = getAllPostIds();
   return {
     paths,
-    fallback: false
-  }
-}
+    fallback: false,
+  };
+};
 
 export const getStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id)
+  const postData = await getPostData(params.id);
   return {
     props: {
-      postData
-    }
-  }
-}
+      postData,
+    },
+  };
+};
